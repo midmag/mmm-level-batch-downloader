@@ -16,8 +16,15 @@ pip install -r requirements.txt
 ```
 python batchDownloader.py
 ```
+
+## But how do I play the levels?!
+- Extract the .mmlv.gz level file
+- Place the extracted .mmlv file in your ```AppData\Local\MegaMaker\Levels``` folder
+- Open Mega Man Maker
+- Go to your downloaded levels to see the level in-game! (It will show up as the actual name of the level in-game as in the level file data, not the level ID)
+
 ## Websites used
-1. [Mega Man Maker levels page](https://cdn.megamanmaker.com/levels/)
+- [Mega Man Maker levels page](https://cdn.megamanmaker.com/levels/)
 ## License
 This project is licensed under the [MIT License](LICENSE).
 ## Note
