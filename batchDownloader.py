@@ -32,7 +32,7 @@ print("=== MEGA MAN MAKER LEVEL BATCH DOWNLOADER ===\n"
       "=== Download all the levels in Mega Man Maker! ===\n")
 
 while True:
-    inputFolderChoice = input("Would you like to see the folder structure?\n"
+    inputFolderChoice = input("Would you like to see the whole folder structure?\n"
                               "Enter Y/N: ")
 
     if inputFolderChoice.lower() == "y":
@@ -45,7 +45,7 @@ while True:
         print("Please enter a valid option\n")
 
 print("\nFetching levels..."
-      "\nPlease wait for about a minute...")
+      "\nPlease wait for about a minute...\n")
 
 doubleDigitFolders = get_tag_results(levelsUrl)
 for doubleDigit in doubleDigitFolders:
@@ -84,8 +84,7 @@ for doubleDigit in doubleDigitFolders:
                 else:
                     print(levelDownloadSuccessMessage)
                     print(levelDownloadCountMessage)
-
-                print("Total downloaded levels: " + str(totalLevelsDownloaded))
+                    print()
 
                 # print(check_valid_level_file(zippedLevelFileUrl)))
                 # print(zippedLevelFileUrl)
