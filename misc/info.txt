@@ -1,0 +1,38 @@
+= Notes on folder structure =
+Thought I'd explain how the folder structure on cdn.megamanmaker.com works.
+
+Basically, the main folder is /levels/.
+In /levels/ is the first set of folders correspond to the last two digits of the level ID. (Any leading zeroes are ignored.)
+This is actually a pretty smart implementation to keep things organized because I think the way files are stored on servers, a level ID like 20 actually comes after a level ID like 200.
+
+So there are folders from 00 (but really just 0) to 99 in the first level that correspond to the last 2 digits of the level ID.
+Inside each of those folders are another set of folders corresponding to the last four digits of the level ID. (Again, any leading zeroes are ignored.)
+So for example, the /94/ folder in the first level will have folders in the second level from /0094/ (which is just /94/ again) to /9994/.
+(Not every folder necessarily exists in this second level though certain combinations of the last four digits may not exist.
+So technically there should be 10000 folders altogether in the second level, but in reality I believe there are less than that.)
+
+So the program starts downloading all level files ending with 00 or more specifically 0000, then 0100, 0200 and so on.
+This approach also makes it pretty scalable if level IDs ever exceed 6 digits since everything is based off the last 4 digits and not the first X digits.
+
+Something that had me confused was where a single digit level ID like 5 would be stored, which ultimately goes like this:
+- since the last 2 digits are technically 05, it's in the /5/ folder in the first level
+- the last four digits are technically 0005 which is also the /5/ folder in the second level
+- so ultimately level ID 5 is stored in the folder /levels/5/5/ as 5.mmlv.gz
+
+This also means that IDs until 4 digits are technically stored in second level folders that match their digits exactly.
+For example, level ID 1000 would be stored in the /levels/0/1000/ folder as 1000.mmlv.gz
+
+= Side note =
+Prior to this script, I was working on a similar batch level downloader script that pulled data from api.megamanmaker.com and megamaker.webmeka.io
+- api.megamanmaker.com would pull the level stats such as likes, dislikes, plays, etc.
+- megamaker.webmeka.io downloaded levels and would pull info on levels deleted from the server but still available on the former site
+Ultimately the script was rather slow because of the time wasted requesting two separate pages on two separate websites for each level ID.
+
+However, with cdn.megamanmaker.com, I could potentially combine the two scripts into an ultimate batch downloader where:
+- api.megamanmaker.com gets level stats
+- cdn.megamanmaker.com downloads levels
+- megamaker.webmeka.io downloads level files of deleted levels (and potentially grabs comments and recorded level times)
+
+...yes, that is rather redundant when megamaker.webmeka.io already does all three of those, but I'm sure someone would find it useful to get level files and stats without having to load up Mega Man Maker or dig for it on external websites.
+
+If you do find this script useful, please let me know! I would love to keep improving what the script can do.
