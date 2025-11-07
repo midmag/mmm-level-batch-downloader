@@ -21,11 +21,15 @@ python batchDownloader.py
 - Extract the .mmlv.gz level file
 - Place the extracted .mmlv file in your ```AppData\Local\MegaMaker\Levels``` folder
 - Open Mega Man Maker
-- Go to your downloaded levels to see the level in-game! (It will show up as the actual name of the level in-game as in the level file data, not the level ID)
+- Go to your downloaded levels to see the level in-game!
+(The level will show up as its actual name in-game as in the level file data, not the level ID)
 
 ## Websites used
 - [Mega Man Maker levels page](https://cdn.megamanmaker.com/levels/)
 ## License
 This project is licensed under the [MIT License](LICENSE).
 ## Note
-This tool is not affiliated with the Mega Man Maker team. It is something I created on my own just cause it seemed like a fun challenge :)
+This tool is not affiliated with the Mega Man Maker team.
+It is something I created on my own just cause it seemed like a fun challenge :)
+
+I am open to suggestions and features (I have many already planned!) though I apologize if this repository is not updated in a while as I am often busy with other projects.
